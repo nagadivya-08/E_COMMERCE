@@ -4,7 +4,7 @@ import { useWishlist } from "../context/WishlistContext";
 import { useCart } from "../context/CartContext";
 import { useAddress } from "../context/AddressContext";
 import { products } from "../data/products";
-import "../app.css";
+import "../App.css"
 
 function Home() {
   const navigate = useNavigate();
