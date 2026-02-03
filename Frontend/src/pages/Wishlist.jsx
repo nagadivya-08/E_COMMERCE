@@ -1,7 +1,7 @@
 import React from "react";
 import { useWishlist } from "../context/WishlistContext";
 import { useNavigate } from "react-router-dom";
-import "../app.css";
+import "../App.css";
 
 function Wishlist() {
   const { wishlist, removeFromWishlist } = useWishlist();

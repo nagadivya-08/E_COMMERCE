@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAddress } from "../context/AddressContext";
-import "../app.css";
+import "../App.css";
 
 function Addresses() {
     const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useOrders } from "../context/OrderContext";
-import "../app.css";
+import "../App.css";
 
 function OrderTracking() {
     const { orderId } = useParams();

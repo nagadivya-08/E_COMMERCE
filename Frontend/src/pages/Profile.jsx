@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useOrders } from "../context/OrderContext";
-import "../app.css";
+import "../App.css";
 
 function Profile() {
     const navigate = useNavigate();
