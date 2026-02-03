@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login ";
-import Register from "./pages/Register"
+
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
@@ -11,6 +11,7 @@ import OrderTracking from "./pages/OrderTracking";
 import OrderFeedback from "./pages/OrderFeedback";
 import Addresses from "./pages/Addresses";
 import CancelOrder from "./pages/CancelOrder";
+import Register from "./pages/Register";
 
 
 
