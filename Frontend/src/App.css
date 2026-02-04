@@ -164,6 +164,139 @@
 }
 
 /* ==============================
+   CART PAGE
+============================== */
+.cart-page {
+  min-height: 100vh;
+  width: 100vw;
+
+  background-image: url('./images/cart.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  padding-top: 64px;
+  color: white;
+}
+
+/* DARK OVERLAY FOR CART */
+.cart-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.cart-page>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==============================
+   ADDRESS PAGE
+============================== */
+.address-page {
+  min-height: 100vh;
+  width: 100vw;
+
+  background-image: url('./images/address.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  padding-top: 64px;
+}
+
+/* DARK OVERLAY FOR ADDRESS PAGE */
+.address-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.address-page>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==============================
+   WISHLIST PAGE
+============================== */
+.wishlist-page {
+  min-height: 100vh;
+  width: 100vw;
+
+  background-image: url('./images/wishlist.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  padding-top: 64px;
+  color: white;
+}
+
+/* DARK OVERLAY FOR WISHLIST PAGE */
+.wishlist-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.wishlist-page>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==============================
+   PROFILE PAGE
+============================== */
+.profile-page {
+  min-height: 100vh;
+  width: 100vw;
+  background: #000000;
+  padding-top: 64px;
+  color: #ffffff;
+}
+
+.profile-page .user-card {
+  background-color: #1f2937 !important;
+  /* Darker gray for card contrast */
+}
+
+.profile-page .tab-item {
+  color: #9ca3af !important;
+}
+
+.profile-page .tab-item.active {
+  color: #3b82f6 !important;
+  border-bottom: 3px solid #3b82f6 !important;
+}
+
+.profile-page .order-card {
+  background-color: #111827 !important;
+  border: 1px solid #374151 !important;
+  color: #ffffff !important;
+}
+
+.profile-page .faq-card {
+  background-color: #111827 !important;
+  border: 1px solid #1f2937 !important;
+}
+
+.profile-page .coupon-card {
+  background-color: #111827 !important;
+  border: 2px dashed #3b82f6 !important;
+}
+
+/* ==============================
    HOME PAGE (MODERN E-COMMERCE)
 ============================== */
 
@@ -190,8 +323,8 @@
   align-items: center;
   justify-content: space-between;
 
-  background: #2874f0;
-  /* Flipkart Blue */
+  background: #4b5563;
+  /* Grey */
   color: #ffffff;
 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -218,7 +351,7 @@
   border-radius: 4px;
 
   background: #ffffff;
-  color: #2874f0;
+  color: #4b5563;
 
   font-size: 13px;
   font-weight: 700;
@@ -247,14 +380,17 @@
   text-align: center;
 }
 
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero-slider {
+  display: flex;
   width: 100%;
   height: 100%;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-video {
+  min-width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: 0;
 }
 
 .hero-content {
@@ -297,18 +433,45 @@
   color: #111827;
 }
 
+/* FEATURED PRODUCTS BACKGROUND */
+.featured-products {
+  background-image: url('./images/products_background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-products::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.featured-products>* {
+  position: relative;
+  z-index: 1;
+}
+
+.featured-products h2 {
+  color: rgb(248, 219, 219) !important;
+}
+
 /* PRODUCT GRID */
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
 }
 
 /* PRODUCT CARD */
 .home-card {
   background: #f9fafb;
   border-radius: 10px;
-  padding: 16px;
+  padding: 10px;
   text-align: center;
   position: relative;
 
@@ -322,14 +485,14 @@
 
 .home-card img {
   width: 100%;
-  height: 150px;
+  height: 120px;
   object-fit: cover;
   border-radius: 6px;
 }
 
 .home-card h4 {
-  margin: 10px 0 4px;
-  font-size: 15px;
+  margin: 8px 0 2px;
+  font-size: 13px;
   color: #111827;
 }
 

@@ -22,7 +22,7 @@ function Addresses() {
     };
 
     return (
-        <div className="home-page">
+        <div className="address-page">
             <header className="home-header">
                 <div className="home-title" onClick={() => navigate("/home")} style={{ cursor: "pointer" }}>ShopEase</div>
                 <div className="home-actions">
@@ -36,12 +36,19 @@ function Addresses() {
             </header>
 
             <div style={{ padding: "80px 20px 40px", maxWidth: "800px", margin: "0 auto" }}>
-                <h2 style={{ textAlign: "center", marginBottom: "30px" }}>Manage Addresses</h2>
+                <h2 style={{ textAlign: "center", marginBottom: "30px", color: "white" }}>Manage Addresses</h2>
 
                 <button
                     className="btn-cart"
                     onClick={() => setIsAdding(!isAdding)}
-                    style={{ marginBottom: "20px", display: "block", marginLeft: "auto" }}
+                    style={{
+                        marginBottom: "20px",
+                        display: "block",
+                        marginRight: "auto",
+                        width: "auto",
+                        padding: "8px 20px",
+                        fontSize: "0.9rem"
+                    }}
                 >
                     {isAdding ? "Cancel" : "+ Add New Address"}
                 </button>
@@ -64,7 +71,7 @@ function Addresses() {
                 <div style={{ display: "grid", gap: "20px" }}>
                     {addresses.map((addr) => (
                         <div key={addr.id} style={{
-                            border: selectedAddress?.id === addr.id ? "2px solid #007bff" : "1px solid #ddd",
+                            border: selectedAddress?.id === addr.id ? "2px solid #e100ff" : "1px solid #ddd",
                             padding: "20px",
                             borderRadius: "8px",
                             backgroundColor: selectedAddress?.id === addr.id ? "#f0f8ff" : "white",

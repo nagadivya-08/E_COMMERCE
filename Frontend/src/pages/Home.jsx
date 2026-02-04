@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useWishlist } from "../context/WishlistContext";
 import { useCart } from "../context/CartContext";
@@ -28,6 +28,20 @@ function Home() {
   });
 
   const [appliedFilters, setAppliedFilters] = useState(filters);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+  const heroVideos = [
+    "/src/images/background.mp4",
+    "/src/images/sales.webm",
+    "/src/images/shopping.webm"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideoIndex((prev) => (prev + 1) % heroVideos.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [heroVideos.length]);
 
 
   const handleLogout = () => {
@@ -116,24 +130,33 @@ function Home() {
 
       {/* HERO */}
       <div className="home-hero">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="hero-video"
+        <div
+          className="hero-slider"
+          style={{ transform: `translateX(-${currentVideoIndex * 100}%)` }}
         >
-          <source src="/src/images/background.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="hero-content">
-          <h1>Shop Smart, Shop Easy</h1>
-          <p>Best deals on your favorite products</p>
+          {heroVideos.map((src, idx) => (
+            <video
+              key={idx}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="hero-video"
+            >
+              <source src={src} type={src.endsWith(".mp4") ? "video/mp4" : "video/webm"} />
+              Your browser does not support the video tag.
+            </video>
+          ))}
         </div>
+        {/* hero-content removed as requested */}
       </div>
 
       {/* SEARCH & FILTER BAR */}
       <section className="home-section">
+        <div style={{ textAlign: "center", marginBottom: "20px" }}>
+          <h1>Shop Smart, Shop Easy</h1>
+          <p>Best deals on your favorite products</p>
+        </div>
         <h2>Find Products</h2>
 
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
@@ -177,7 +200,7 @@ function Home() {
                 <div className="filter-group">
                   <label>Price Range (Up to ₹{filters.maxPrice})</label>
                   <input
-                    type="range" min="0" max="100000" step="500"
+                    type="range" min="0" max="100000" step="100"
                     value={filters.maxPrice}
                     onChange={(e) => setFilters({ ...filters, maxPrice: parseInt(e.target.value) })}
                   />
@@ -258,7 +281,7 @@ function Home() {
       </section>
 
       {/* FEATURED PRODUCTS */}
-      <section className="home-section">
+      <section className="home-section featured-products">
         <h2>Featured Products</h2>
         <div className="home-grid">
           {filteredProducts.map((product, index) => {

@@ -55,7 +55,7 @@ function ProductDetails() {
                     <div style={{ flex: "1", minWidth: "300px" }}>
                         <h1 style={{ fontSize: "2.5rem", marginBottom: "10px" }}>{product.name}</h1>
                         <p style={{ fontSize: "1.1rem", color: "#666", marginBottom: "20px" }}>{product.category}</p>
-                        <h2 style={{ fontSize: "2rem", color: "#007bff", marginBottom: "20px" }}>₹{product.price.toLocaleString()}</h2>
+                        <h2 style={{ fontSize: "2rem", color: "#171212", marginBottom: "20px" }}>₹{product.price.toLocaleString()}</h2>
                         <p style={{ lineHeight: "1.6", marginBottom: "30px" }}>{product.description}</p>
 
                         <div style={{ display: "flex", gap: "15px" }}>

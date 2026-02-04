@@ -8,7 +8,7 @@ function Wishlist() {
   const navigate = useNavigate();
 
   return (
-    <div className="home-page">
+    <div className="wishlist-page">
       <header className="home-header">
         <div className="home-title" onClick={() => navigate("/home")} style={{ cursor: "pointer" }}>ShopEase</div>
         <div className="home-actions">
@@ -22,9 +22,13 @@ function Wishlist() {
         <h2>❤️ Your Wishlist ({wishlist.length})</h2>
 
         {wishlist.length === 0 ? (
-          <div style={{ textAlign: "center", marginTop: "50px" }}>
+          <div style={{ textAlign: "left", marginTop: "50px" }}>
             <h3>Your wishlist is empty!</h3>
-            <button className="btn-cart" onClick={() => navigate("/home")} style={{ marginTop: "20px" }}>
+            <button
+              className="btn-cart"
+              onClick={() => navigate("/home")}
+              style={{ marginTop: "20px", width: "auto", padding: "8px 20px", fontSize: "0.9rem" }}
+            >
               Explore Products
             </button>
           </div>

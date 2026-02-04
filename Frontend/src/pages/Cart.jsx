@@ -10,7 +10,7 @@ function Cart() {
   const total = cart.reduce((acc, item) => acc + item.price, 0);
 
   return (
-    <div className="home-page">
+    <div className="cart-page">
       <header className="home-header">
         <div className="home-title" onClick={() => navigate("/home")} style={{ cursor: "pointer" }}>ShopEase</div>
         <div className="home-actions">
@@ -24,9 +24,13 @@ function Cart() {
         <h2>🛒 Your Cart ({cart.length})</h2>
 
         {cart.length === 0 ? (
-          <div style={{ textAlign: "center", marginTop: "50px" }}>
+          <div style={{ textAlign: "left", marginTop: "50px" }}>
             <h3>Your cart is empty!</h3>
-            <button className="btn-cart" onClick={() => navigate("/home")} style={{ marginTop: "20px" }}>
+            <button
+              className="btn-cart"
+              onClick={() => navigate("/home")}
+              style={{ marginTop: "20px", width: "auto", padding: "8px 20px", fontSize: "0.9rem" }}
+            >
               Shop Now
             </button>
           </div>
@@ -49,9 +53,13 @@ function Cart() {
               ))}
             </div>
 
-            <div style={{ marginTop: "40px", borderTop: "1px solid #ccc", paddingTop: "20px", textAlign: "right" }}>
+            <div style={{ marginTop: "40px", borderTop: "1px solid #ccc", paddingTop: "20px", textAlign: "left" }}>
               <h3>Total: ₹{total.toLocaleString()}</h3>
-              <button className="btn-cart" style={{ fontSize: "1.2rem", padding: "10px 30px" }} onClick={() => navigate("/checkout")}>
+              <button
+                className="btn-cart"
+                style={{ width: "auto", padding: "10px 25px", fontSize: "1rem" }}
+                onClick={() => navigate("/checkout")}
+              >
                 Checkout
               </button>
             </div>
